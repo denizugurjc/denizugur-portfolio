@@ -1,8 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
 import { navLinks, site } from "@/data/portfolio";
 import { cn } from "@/lib/cn";
+import { useCallback, useEffect, useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 import { CloseIcon, MenuIcon } from "./ui/Icons";
 
@@ -56,7 +56,7 @@ export function Navbar() {
           className="group flex items-center gap-2 font-semibold tracking-tight"
         >
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-accent to-accent-2 text-sm font-bold text-white">
-            {site.name.charAt(0)}
+            {site.name.split(" ").map((w) => w[0]).join("")}
           </span>
           <span className="hidden sm:inline">{site.name}</span>
         </a>

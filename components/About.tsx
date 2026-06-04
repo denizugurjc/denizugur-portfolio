@@ -1,21 +1,20 @@
 import { about, site } from "@/data/portfolio";
 import { Reveal } from "./ui/Reveal";
 import { SectionWrapper } from "./ui/SectionWrapper";
+import Image from "next/image";
 
 export function About() {
   return (
     <SectionWrapper id="about" eyebrow="Who I am" title={about.heading}>
       <div className="grid items-center gap-12 lg:grid-cols-[0.8fr_1fr]">
-        {/* Profile image placeholder */}
         <Reveal className="mx-auto w-full max-w-sm">
           <div className="relative aspect-square overflow-hidden rounded-3xl border border-border-soft bg-gradient-to-br from-accent/20 to-accent-2/10">
             <div className="absolute inset-0 bg-grid opacity-40" />
             <div className="absolute inset-0 grid place-items-center">
               <span className="bg-gradient-to-br from-accent to-accent-2 bg-clip-text text-7xl font-bold text-transparent">
-                {site.name
-                  .split(" ")
+                <Image src="/profilePic.png" alt={site.name.split(" ")
                   .map((w) => w[0])
-                  .join("")}
+                  .join("")} width={400} height={300} />
               </span>
             </div>
             <div className="absolute bottom-4 left-4 rounded-full border border-border-soft bg-background/80 px-3 py-1 text-xs font-medium text-muted backdrop-blur">

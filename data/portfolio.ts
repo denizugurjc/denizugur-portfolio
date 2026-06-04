@@ -38,7 +38,7 @@ export const site = {
   /** Short intro that appears under the hero headline. */
   intro:
     "I design and build fast, accessible products from idea to production — turning complex problems into clean, delightful interfaces.",
-  email: "hello@example.com",
+  email: "denizugur.dev@gmail.com",
   location: "Remote · Worldwide",
   resumeUrl: "#",
 };
@@ -57,7 +57,7 @@ export const about = {
     "I care deeply about performance, accessibility, and developer experience. When I'm not coding, you'll find me exploring new tools, contributing to open source, or sketching out the next side project.",
   ],
   highlights: [
-    { value: "5+", label: "Years building for the web" },
+    { value: "4+", label: "Years building for the web" },
     { value: "40+", label: "Projects shipped" },
     { value: "∞", label: "Cups of coffee" },
   ],
@@ -140,7 +140,7 @@ export const projects: Project[] = [
 ];
 
 export const socials: SocialLink[] = [
-  { label: "GitHub", href: "https://github.com", icon: "github" },
-  { label: "LinkedIn", href: "https://linkedin.com", icon: "linkedin" },
-  { label: "Email", href: "mailto:hello@example.com", icon: "mail" },
+  { label: "GitHub", href: "https://github.com/denizefeugur", icon: "github" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/deniz-efe-ugur/", icon: "linkedin" },
+  { label: "Email", href: "mailto:denizugur.dev@gmail.com", icon: "mail" },
 ];
