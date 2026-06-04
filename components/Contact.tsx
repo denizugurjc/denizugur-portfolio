@@ -1,27 +1,30 @@
+"use client";
+
 import { site, socials } from "@/data/portfolio";
 import { ContactForm } from "./ContactForm";
 import { socialIcons } from "./ui/Icons";
 import { Reveal } from "./ui/Reveal";
 import { SectionWrapper } from "./ui/SectionWrapper";
+import { useDictionary } from "./language";
 
 export function Contact() {
+  const dict = useDictionary();
   return (
     <SectionWrapper
       id="contact"
-      eyebrow="Get in touch"
-      title="Let's build something together"
-      description="Have a project in mind or just want to say hi? My inbox is always open."
+      eyebrow={dict.contact.eyebrow}
+      title={dict.contact.title}
+      description={dict.contact.description}
     >
       <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
         <Reveal>
           <div className="flex h-full flex-col justify-between gap-8">
             <div>
               <h3 className="text-xl font-semibold tracking-tight">
-                Contact details
+                {dict.contact.detailsHeading}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">
-                Prefer email or social? Reach me through any of these and I&apos;ll
-                respond within a day or two.
+                {dict.contact.detailsText}
               </p>
 
               <a
@@ -35,7 +38,9 @@ export function Contact() {
                   })()}
                 </span>
                 <span>
-                  <span className="block text-xs text-muted">Email me at</span>
+                  <span className="block text-xs text-muted">
+                    {dict.contact.emailMeAt}
+                  </span>
                   <span className="block text-sm font-medium transition-colors group-hover:text-accent">
                     {site.email}
                   </span>
@@ -45,7 +50,7 @@ export function Contact() {
 
             <div>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-muted">
-                Find me online
+                {dict.contact.findMeOnline}
               </p>
               <div className="flex gap-3">
                 {socials.map((social) => {

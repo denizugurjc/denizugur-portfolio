@@ -1,11 +1,15 @@
-import { about, site } from "@/data/portfolio";
+"use client";
+
+import { site } from "@/data/portfolio";
 import { Reveal } from "./ui/Reveal";
 import { SectionWrapper } from "./ui/SectionWrapper";
+import { useDictionary } from "./language";
 import Image from "next/image";
 
 export function About() {
+  const dict = useDictionary();
   return (
-    <SectionWrapper id="about" eyebrow="Who I am" title={about.heading}>
+    <SectionWrapper id="about" eyebrow={dict.about.eyebrow} title={dict.about.title}>
       <div className="grid items-center gap-12 lg:grid-cols-[0.8fr_1fr]">
         <Reveal className="mx-auto w-full max-w-sm">
           <div className="relative aspect-square overflow-hidden rounded-3xl border border-border-soft bg-gradient-to-br from-accent/20 to-accent-2/10">
@@ -24,7 +28,7 @@ export function About() {
         </Reveal>
 
         <div>
-          {about.paragraphs.map((paragraph, i) => (
+          {dict.about.paragraphs.map((paragraph, i) => (
             <Reveal key={i} delay={i * 80}>
               <p className="mb-4 text-pretty text-base leading-relaxed text-muted">
                 {paragraph}
@@ -34,7 +38,7 @@ export function About() {
 
           <Reveal delay={160}>
             <dl className="mt-8 grid grid-cols-3 gap-4">
-              {about.highlights.map((item) => (
+              {dict.about.highlights.map((item) => (
                 <div
                   key={item.label}
                   className="rounded-2xl border border-border-soft bg-card/60 p-4 text-center backdrop-blur"

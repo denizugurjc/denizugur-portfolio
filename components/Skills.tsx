@@ -1,14 +1,18 @@
+"use client";
+
 import { skills } from "@/data/portfolio";
 import { Reveal } from "./ui/Reveal";
 import { SectionWrapper } from "./ui/SectionWrapper";
+import { useDictionary } from "./language";
 
 export function Skills() {
+  const dict = useDictionary();
   return (
     <SectionWrapper
       id="skills"
-      eyebrow="What I work with"
-      title="Skills & Technologies"
-      description="A toolbox I've sharpened across years of building and shipping products end-to-end."
+      eyebrow={dict.skills.eyebrow}
+      title={dict.skills.title}
+      description={dict.skills.description}
     >
       <Reveal>
         <ul className="flex flex-wrap justify-center gap-3">

@@ -5,7 +5,17 @@ import { GitHubIcon, ExternalLinkIcon } from "./Icons";
 /**
  * Project card with a gradient preview, tech-stack tags, and hover glow.
  */
-export function Card({ project }: { project: Project }) {
+export function Card({
+  project,
+  description,
+  codeLabel,
+  demoLabel,
+}: {
+  project: Project;
+  description: string;
+  codeLabel: string;
+  demoLabel: string;
+}) {
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border-soft bg-card/60 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_24px_60px_-24px_var(--accent)]">
       {/* Gradient preview header */}
@@ -29,7 +39,7 @@ export function Card({ project }: { project: Project }) {
       <div className="flex flex-1 flex-col p-6">
         <h3 className="text-lg font-semibold tracking-tight">{project.title}</h3>
         <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
-          {project.description}
+          {description}
         </p>
 
         <ul className="mt-5 flex flex-wrap gap-2">
@@ -51,7 +61,7 @@ export function Card({ project }: { project: Project }) {
             className="inline-flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-foreground"
           >
             <GitHubIcon className="h-4 w-4" />
-            Code
+            {codeLabel}
           </a>
           <a
             href={project.demo}
@@ -60,7 +70,7 @@ export function Card({ project }: { project: Project }) {
             className="inline-flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-accent"
           >
             <ExternalLinkIcon className="h-4 w-4" />
-            Live Demo
+            {demoLabel}
           </a>
         </div>
       </div>

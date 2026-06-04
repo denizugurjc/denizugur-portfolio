@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   },
 };
 
-// Applied before hydration so the saved theme shows with no flash of light mode.
-// Defaults to dark when nothing is stored.
-const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.remove('dark');}else{document.documentElement.classList.add('dark');}}catch(e){document.documentElement.classList.add('dark');}})();`;
+// Applied before hydration so the saved theme/language show with no flash.
+// Theme defaults to dark; language defaults to English.
+const initScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.remove('dark');}else{document.documentElement.classList.add('dark');}var l=localStorage.getItem('lang');if(l==='de'){document.documentElement.lang='de';}}catch(e){document.documentElement.classList.add('dark');}})();`;
 
 export default function RootLayout({
   children,
@@ -39,7 +39,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script dangerouslySetInnerHTML={{ __html: initScript }} />
       </head>
       <body className="min-h-full font-sans">{children}</body>
     </html>

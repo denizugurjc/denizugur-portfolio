@@ -1,9 +1,13 @@
+"use client";
+
 import { site, socials } from "@/data/portfolio";
 import { Button } from "./ui/Button";
 import { ArrowIcon, socialIcons } from "./ui/Icons";
 import { Reveal } from "./ui/Reveal";
+import { useDictionary } from "./language";
 
 export function Hero() {
+  const dict = useDictionary();
   return (
     <section
       id="home"
@@ -27,34 +31,34 @@ export function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
               </span>
-              Available for new opportunities
+              {dict.hero.availability}
             </span>
           </Reveal>
 
           <Reveal delay={80}>
             <h1 className="mt-8 text-balance text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
-              Hi, I&apos;m {site.name.split(" ")[0]}
+              {dict.hero.greeting} {site.name.split(" ")[0]}
               <br />
               <span className="animate-gradient-text bg-gradient-to-r from-accent via-accent-2 to-accent bg-clip-text text-transparent">
-                {site.role}
+                {dict.hero.role}
               </span>
             </h1>
           </Reveal>
 
           <Reveal delay={160}>
             <p className="mx-auto mt-6 max-w-xl text-pretty text-lg leading-relaxed text-muted">
-              {site.intro}
+              {dict.hero.intro}
             </p>
           </Reveal>
 
           <Reveal delay={240}>
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button href="#projects" size="lg" className="group">
-                View Projects
+                {dict.hero.viewProjects}
                 <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button href="#contact" variant="secondary" size="lg">
-                Contact Me
+                {dict.hero.contactMe}
               </Button>
             </div>
           </Reveal>

@@ -1,7 +1,11 @@
-import { navLinks, site, socials } from "@/data/portfolio";
+"use client";
+
+import { navItems, site, socials } from "@/data/portfolio";
 import { socialIcons } from "./ui/Icons";
+import { useDictionary } from "./language";
 
 export function Footer() {
+  const dict = useDictionary();
   const year = new Date().getFullYear();
 
   return (
@@ -12,18 +16,18 @@ export function Footer() {
             {site.name}
           </a>
           <p className="mt-1 text-sm text-muted">
-            © {year} · {site.role}. All rights reserved.
+            © {year} · {site.role}. {dict.footer.rights}
           </p>
         </div>
 
         <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
-          {navLinks.map((link) => (
+          {navItems.map((item) => (
             <a
-              key={link.href}
-              href={link.href}
+              key={item.href}
+              href={item.href}
               className="text-sm text-muted transition-colors hover:text-foreground"
             >
-              {link.label}
+              {dict.nav[item.id]}
             </a>
           ))}
         </nav>

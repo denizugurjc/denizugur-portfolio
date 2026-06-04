@@ -1,14 +1,16 @@
 "use client";
 
-import { navLinks, site } from "@/data/portfolio";
+import { navItems, site } from "@/data/portfolio";
 import { cn } from "@/lib/cn";
 import { useCallback, useEffect, useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
+import { LanguageSwitch, useDictionary } from "./language";
 import { CloseIcon, MenuIcon } from "./ui/Icons";
 
-const sectionIds = ["home", ...navLinks.map((l) => l.href.replace("#", ""))];
+const sectionIds = ["home", ...navItems.map((i) => i.href.replace("#", ""))];
 
 export function Navbar() {
+  const dict = useDictionary();
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
@@ -63,12 +65,12 @@ export function Navbar() {
 
         {/* Desktop links */}
         <ul className="hidden items-center gap-1 md:flex">
-          {navLinks.map((link) => {
-            const id = link.href.replace("#", "");
+          {navItems.map((item) => {
+            const id = item.id;
             return (
-              <li key={link.href}>
+              <li key={item.href}>
                 <a
-                  href={link.href}
+                  href={item.href}
                   className={cn(
                     "relative rounded-full px-4 py-2 text-sm font-medium transition-colors",
                     active === id
@@ -79,7 +81,7 @@ export function Navbar() {
                   {active === id && (
                     <span className="absolute inset-0 -z-10 rounded-full bg-card/80 ring-1 ring-border-soft" />
                   )}
-                  {link.label}
+                  {dict.nav[id]}
                 </a>
               </li>
             );
@@ -87,6 +89,7 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2">
+          <LanguageSwitch />
           <ThemeToggle />
           <button
             type="button"
@@ -114,12 +117,12 @@ export function Navbar() {
         )}
       >
         <ul className="flex flex-col p-2">
-          {navLinks.map((link) => {
-            const id = link.href.replace("#", "");
+          {navItems.map((item) => {
+            const id = item.id;
             return (
-              <li key={link.href}>
+              <li key={item.href}>
                 <a
-                  href={link.href}
+                  href={item.href}
                   onClick={closeMenu}
                   className={cn(
                     "block rounded-xl px-4 py-3 text-sm font-medium transition-colors",
@@ -128,7 +131,7 @@ export function Navbar() {
                       : "text-muted hover:bg-card/60 hover:text-foreground",
                   )}
                 >
-                  {link.label}
+                  {dict.nav[id]}
                 </a>
               </li>
             );

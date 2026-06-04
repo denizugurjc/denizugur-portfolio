@@ -3,8 +3,9 @@
  * Edit everything here — copy, links, skills, and projects — to make the site yours.
  */
 
-export type NavLink = {
-  label: string;
+export type NavItem = {
+  /** Section id, also used to look up the translated label in i18n.ts. */
+  id: "about" | "skills" | "projects" | "contact";
   href: string;
 };
 
@@ -15,8 +16,9 @@ export type Skill = {
 };
 
 export type Project = {
+  /** Stable id used to resolve the translated description in i18n.ts. */
+  id: string;
   title: string;
-  description: string;
   tags: string[];
   github: string;
   demo: string;
@@ -35,33 +37,17 @@ export const site = {
   name: "Deniz Ugur",
   role: "Full-Stack Developer",
   tagline: "Full-stack developer building modern, performant web experiences.",
-  /** Short intro that appears under the hero headline. */
-  intro:
-    "I design and build fast, accessible products from idea to production — turning complex problems into clean, delightful interfaces.",
   email: "denizugur.dev@gmail.com",
   location: "Remote · Worldwide",
   resumeUrl: "#",
 };
 
-export const navLinks: NavLink[] = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+export const navItems: NavItem[] = [
+  { id: "about", href: "#about" },
+  { id: "skills", href: "#skills" },
+  { id: "projects", href: "#projects" },
+  { id: "contact", href: "#contact" },
 ];
-
-export const about = {
-  heading: "About me",
-  paragraphs: [
-    "I'm a full-stack developer with a passion for crafting software that feels effortless to use. Over the years I've shipped products across startups and larger teams, owning features end-to-end — from database schema to pixel-perfect UI.",
-    "I care deeply about performance, accessibility, and developer experience. When I'm not coding, you'll find me exploring new tools, contributing to open source, or sketching out the next side project.",
-  ],
-  highlights: [
-    { value: "4+", label: "Years building for the web" },
-    { value: "40+", label: "Projects shipped" },
-    { value: "∞", label: "Cups of coffee" },
-  ],
-};
 
 export const skills: Skill[] = [
   { name: "TypeScript", category: "Languages" },
@@ -72,66 +58,66 @@ export const skills: Skill[] = [
   { name: "Next.js", category: "Frontend" },
   { name: "Tailwind CSS", category: "Frontend" },
   { name: "Framer Motion", category: "Frontend" },
+  { name: "Cypress", category: "Frontend" },
+  { name: "Jest", category: "Frontend" },
   { name: "Node.js", category: "Backend" },
   { name: "PostgreSQL", category: "Backend" },
-  { name: "GraphQL", category: "Backend" },
-  { name: "Prisma", category: "Backend" },
+  { name: "MySQL", category: "Backend" },
+  { name: "Sequelize", category: "Backend" },
+  { name: "Serverless Computing", category: "Backend" },
+  { name: "CI/CD", category: "Tools & DevOps" },
   { name: "Docker", category: "Tools & DevOps" },
   { name: "AWS", category: "Tools & DevOps" },
   { name: "Git", category: "Tools & DevOps" },
   { name: "Vercel", category: "Tools & DevOps" },
+  { name: "Scrum", category: "Tools & DevOps" },
+  { name: "More +", category: "Tools & DevOps" },
 ];
 
 export const projects: Project[] = [
   {
+    id: "nimbus",
     title: "Nimbus Analytics",
-    description:
-      "A real-time analytics dashboard that visualizes millions of events with sub-second latency and a fully responsive UI.",
     tags: ["Next.js", "TypeScript", "PostgreSQL", "WebSockets"],
     github: "#",
     demo: "#",
     accent: "from-violet-500/30 to-indigo-500/10",
   },
   {
+    id: "orbit",
     title: "Orbit Commerce",
-    description:
-      "Headless e-commerce storefront with blazing-fast page loads, dynamic checkout, and a custom CMS integration.",
     tags: ["React", "Node.js", "Stripe", "GraphQL"],
     github: "#",
     demo: "#",
     accent: "from-sky-500/30 to-cyan-500/10",
   },
   {
+    id: "lumen",
     title: "Lumen UI",
-    description:
-      "An open-source component library of accessible, themeable React primitives used by thousands of developers.",
     tags: ["TypeScript", "Tailwind CSS", "Radix", "Storybook"],
     github: "#",
     demo: "#",
     accent: "from-emerald-500/30 to-teal-500/10",
   },
   {
+    id: "pulse",
     title: "Pulse Chat",
-    description:
-      "End-to-end encrypted team messaging app with presence, threads, and offline-first sync across devices.",
     tags: ["Next.js", "Prisma", "Redis", "WebRTC"],
     github: "#",
     demo: "#",
     accent: "from-rose-500/30 to-pink-500/10",
   },
   {
+    id: "atlas",
     title: "Atlas Maps",
-    description:
-      "Interactive geospatial explorer rendering custom map layers and routing on top of a vector tile pipeline.",
     tags: ["React", "Mapbox", "Python", "FastAPI"],
     github: "#",
     demo: "#",
     accent: "from-amber-500/30 to-orange-500/10",
   },
   {
+    id: "forge",
     title: "Forge CLI",
-    description:
-      "A developer productivity CLI that scaffolds full-stack apps with sensible defaults and zero configuration.",
     tags: ["Node.js", "TypeScript", "ESBuild"],
     github: "#",
     demo: "#",
