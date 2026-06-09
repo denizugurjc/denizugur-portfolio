@@ -30,6 +30,7 @@ export interface Dictionary {
     descriptions: Record<string, string>;
     code: string;
     liveDemo: string;
+    construction: { badge: string; title: string; description: string };
   };
   contact: {
     eyebrow: string;
@@ -108,6 +109,12 @@ const en: Dictionary = {
     },
     code: "Code",
     liveDemo: "Live Demo",
+    construction: {
+      badge: "Work in progress",
+      title: "This section is under construction 🚧",
+      description:
+        "I'm currently curating and polishing my best work. They are landing here soon, check back shortly!",
+    },
   },
   contact: {
     eyebrow: "Get in touch",
@@ -189,6 +196,12 @@ const de: Dictionary = {
     },
     code: "Code",
     liveDemo: "Live-Demo",
+    construction: {
+      badge: "In Arbeit",
+      title: "Dieser Bereich ist noch im Aufbau 🚧",
+      description:
+        "Ich wähle und poliere gerade meine besten Arbeiten. Sie erscheinen hier in Kürze, schau bald wieder vorbei!",
+    },
   },
   contact: {
     eyebrow: "Kontakt",

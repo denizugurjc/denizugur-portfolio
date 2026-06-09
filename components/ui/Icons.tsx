@@ -149,6 +149,23 @@ export function CloseIcon(props: IconProps) {
   );
 }
 
+export function WrenchIcon(props: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.8}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.8-.7-.7-2.8 2.5-2.5z" />
+    </svg>
+  );
+}
+
 export const socialIcons = {
   github: GitHubIcon,
   linkedin: LinkedInIcon,

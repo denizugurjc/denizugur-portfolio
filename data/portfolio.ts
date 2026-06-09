@@ -52,12 +52,10 @@ export const navItems: NavItem[] = [
 export const skills: Skill[] = [
   { name: "TypeScript", category: "Languages" },
   { name: "JavaScript", category: "Languages" },
-  { name: "Python", category: "Languages" },
   { name: "SQL", category: "Languages" },
   { name: "React", category: "Frontend" },
   { name: "Next.js", category: "Frontend" },
   { name: "Tailwind CSS", category: "Frontend" },
-  { name: "Framer Motion", category: "Frontend" },
   { name: "Cypress", category: "Frontend" },
   { name: "Jest", category: "Frontend" },
   { name: "Node.js", category: "Backend" },
