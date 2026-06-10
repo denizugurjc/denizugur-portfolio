@@ -48,9 +48,12 @@ export interface Dictionary {
       message: string;
       messagePlaceholder: string;
       send: string;
+      sending: string;
       successTitle: string;
       successText: string;
       sendAnother: string;
+      errorValidation: string;
+      errorGeneric: string;
     };
   };
   footer: { rights: string };
@@ -134,10 +137,15 @@ const en: Dictionary = {
       message: "Message",
       messagePlaceholder: "Tell me about your project...",
       send: "Send Message",
+      sending: "Sending…",
       successTitle: "Message sent!",
       successText:
         "Thanks for reaching out — I'll get back to you as soon as I can.",
       sendAnother: "Send another message",
+      errorValidation:
+        "Please add your name, a valid email, and a short message (10+ characters).",
+      errorGeneric:
+        "Something went wrong while sending. Please try again, or email me directly at denizugur.dev@gmail.com.",
     },
   },
   footer: { rights: "All rights reserved." },
@@ -221,10 +229,15 @@ const de: Dictionary = {
       message: "Nachricht",
       messagePlaceholder: "Erzähl mir von deinem Projekt...",
       send: "Nachricht senden",
+      sending: "Wird gesendet…",
       successTitle: "Nachricht gesendet!",
       successText:
         "Danke für deine Nachricht — ich melde mich so schnell wie möglich.",
       sendAnother: "Weitere Nachricht senden",
+      errorValidation:
+        "Bitte gib deinen Namen, eine gültige E-Mail und eine kurze Nachricht (mind. 10 Zeichen) an.",
+      errorGeneric:
+        "Beim Senden ist etwas schiefgelaufen. Bitte versuche es erneut oder schreib mir direkt an denizugur.dev@gmail.com.",
     },
   },
   footer: { rights: "Alle Rechte vorbehalten." },
