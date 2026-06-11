@@ -12,7 +12,7 @@ export type NavItem = {
 export type Skill = {
   name: string;
   /** Short category used purely for visual grouping/legend. */
-  category: "Languages" | "Frontend" | "Backend" | "Tools & DevOps";
+  category: "Languages" | "Frontend" | "Backend" | "Tools & DevOps" | "AI" | "";
 };
 
 export type Project = {
@@ -22,8 +22,26 @@ export type Project = {
   tags: string[];
   github: string;
   demo: string;
-  /** Optional accent gradient used for the card's preview. */
+  /** Optional accent gradient used as a fallback when no image is set. */
   accent?: string;
+  /** Optional year/timeframe shown in the detail dialog. */
+  year?: string;
+  /**
+   * Per-project images. Drop files into `public/projects/` and reference them
+   * by their public path (starting at `/`), e.g. "/projects/my-app-1.png".
+   *
+   * Anything under `public/` is committed to the repo and copied into the
+   * production build, so these paths resolve identically in dev and on the
+   * deployed site. PNG, JPG, WebP, AVIF and SVG are all supported.
+   *
+   * - `cover`: thumbnail shown on the project card (and first gallery slide).
+   * - `screenshots`: additional images shown in the detail dialog gallery.
+   *
+   * When both are omitted, the card and dialog fall back to a styled gradient
+   * placeholder, so projects without images still look complete.
+   */
+  cover?: string;
+  screenshots?: string[];
 };
 
 export type SocialLink = {
@@ -69,57 +87,64 @@ export const skills: Skill[] = [
   { name: "Git", category: "Tools & DevOps" },
   { name: "Vercel", category: "Tools & DevOps" },
   { name: "Scrum", category: "Tools & DevOps" },
-  { name: "More +", category: "Tools & DevOps" },
+  { name: "Claude code", category: "AI" },
+  { name: "Github copilot", category: "AI" },
+  { name: "Chat GPT", category: "AI" },
+  { name: "More +", category: "" },
 ];
 
 export const projects: Project[] = [
   {
-    id: "nimbus",
-    title: "Nimbus Analytics",
-    tags: ["Next.js", "TypeScript", "PostgreSQL", "WebSockets"],
-    github: "#",
-    demo: "#",
+    id: "user-awareness-page",
+    title: "User Awareness phishing Page (my IPA) 2026",
+    tags: ["React.js", "TypeScript", "Tailwind CSS", "AWS", "Geo-blocking"],
+    github: "https://github.com/DenizEfeUgur/User-Awareness-Phishing-Seite",
+    demo: "https://user-awareness.deniz-ugur.dev/",
     accent: "from-violet-500/30 to-indigo-500/10",
+    cover: "/projects/user-awareness/user-awareness-cover.png",
+    screenshots: [
+      "/projects/user-awareness/user-awareness-1.png",
+      "/projects/user-awareness/user-awareness-2.png",
+    ],
   },
   {
-    id: "orbit",
-    title: "Orbit Commerce",
-    tags: ["React", "Node.js", "Stripe", "GraphQL"],
+    id: "parkingapp",
+    title: "Parking lot app (2023 - 2026)",
+    tags: ["Next.js", "Tailwind CSS", "Ansible", "Serverless", "Jenkins (CI/CD)", "AWS"],
     github: "#",
     demo: "#",
     accent: "from-sky-500/30 to-cyan-500/10",
+    cover: "/projects/parkingapp/parkingapp-cover.png",
+    screenshots: ["/projects/parkingapp/parkingapp-1.png",
+      "/projects/parkingapp/parkingapp-2.png",
+      "/projects/parkingapp/parkingapp-3.png",
+      "/projects/parkingapp/parkingapp-4.png",
+      "/projects/parkingapp/parkingapp-5.png",
+      "/projects/parkingapp/parkingapp-6.png",
+      "/projects/parkingapp/parkingapp-7.png"
+    ],
   },
   {
-    id: "lumen",
-    title: "Lumen UI",
-    tags: ["TypeScript", "Tailwind CSS", "Radix", "Storybook"],
+    id: "nat-quiz",
+    title: "Nät Quiz (2023)",
+    tags: ["React.js", "Special effects 🎉",],
+    github: "https://github.com/DenizEfeUgur/NAT-Quiz",
+    demo: "https://quiz.deniz-ugur.dev/",
+    accent: "from-fuchsia-500/30 to-pink-500/10",
+    cover: "/projects/nat-quiz/nat-quiz-cover.png",
+    screenshots: [
+      "/projects/nat-quiz/nat-quiz-1.png",
+      "/projects/nat-quiz/nat-quiz-2.png",
+      "/projects/nat-quiz/nat-quiz-3.png",
+    ],
+  },
+  {
+    id: "more-soon",
+    title: "More projects coming soon",
+    tags: [""],
     github: "#",
     demo: "#",
     accent: "from-emerald-500/30 to-teal-500/10",
-  },
-  {
-    id: "pulse",
-    title: "Pulse Chat",
-    tags: ["Next.js", "Prisma", "Redis", "WebRTC"],
-    github: "#",
-    demo: "#",
-    accent: "from-rose-500/30 to-pink-500/10",
-  },
-  {
-    id: "atlas",
-    title: "Atlas Maps",
-    tags: ["React", "Mapbox", "Python", "FastAPI"],
-    github: "#",
-    demo: "#",
-    accent: "from-amber-500/30 to-orange-500/10",
-  },
-  {
-    id: "forge",
-    title: "Forge CLI",
-    tags: ["Node.js", "TypeScript", "ESBuild"],
-    github: "#",
-    demo: "#",
-    accent: "from-fuchsia-500/30 to-purple-500/10",
   },
 ];
 
