@@ -159,6 +159,68 @@ body {
   }
 }
 
+/* ---------- Like button ---------- */
+@keyframes like-pop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.35);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-like-pop {
+  animation: like-pop 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes like-ring {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+.animate-like-ring {
+  animation: like-ring 0.6s ease-out forwards;
+}
+
+/* Floating hearts burst. `--dx` sets each heart's horizontal drift. */
+@keyframes heart-float {
+  0% {
+    transform: translate(var(--dx, 0), 4px) scale(0.5);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx, 0), -86px) scale(1.05);
+    opacity: 0;
+  }
+}
+
+.animate-heart-float {
+  animation: heart-float 1s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-like-pop,
+  .animate-like-ring,
+  .animate-heart-float {
+    animation: none;
+  }
+}
+
 /* Grid backdrop used behind the hero */
 .bg-grid {
   background-image:

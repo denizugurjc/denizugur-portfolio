@@ -81,6 +81,22 @@ export interface Dictionary {
       errorGeneric: string;
     };
   };
+  like: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    /** Accessible label for the like action. */
+    likeAction: string;
+    /** Accessible label for removing a like. */
+    unlikeAction: string;
+    /** Shown under the count once the visitor has liked. */
+    thanks: string;
+    /** Count labels; `{count}` is replaced with the formatted number. */
+    countOne: string;
+    countMany: string;
+    /** Placeholder shown while the count loads. */
+    loading: string;
+  };
   footer: { rights: string };
   language: { label: string };
 }
@@ -217,6 +233,18 @@ const en: Dictionary = {
         "Something went wrong while sending. Please try again, or email me directly at denizugur.dev@gmail.com.",
     },
   },
+  like: {
+    eyebrow: "Enjoyed it?",
+    title: "Did you like my website?",
+    description:
+      "If this portfolio brought a smile to your face, tap the heart. It genuinely makes my day :)",
+    likeAction: "Like this website",
+    unlikeAction: "Remove your like",
+    thanks: "Thanks for the love!",
+    countOne: "{count} like",
+    countMany: "{count} likes",
+    loading: "Loading…",
+  },
   footer: { rights: "All rights reserved." },
   language: { label: "Language" },
 };
@@ -352,6 +380,18 @@ const de: Dictionary = {
       errorGeneric:
         "Beim Senden ist etwas schiefgelaufen. Bitte versuche es erneut oder schreib mir direkt an denizugur.dev@gmail.com.",
     },
+  },
+  like: {
+    eyebrow: "Hat's gefallen?",
+    title: "Hat dir meine Website gefallen?",
+    description:
+      "Wenn dir dieses Portfolio ein Lächeln entlockt hat, klick aufs Herz — das freut mich riesig.",
+    likeAction: "Diese Website liken",
+    unlikeAction: "Like entfernen",
+    thanks: "Danke für die Liebe!",
+    countOne: "{count} Like",
+    countMany: "{count} Likes",
+    loading: "Lädt…",
   },
   footer: { rights: "Alle Rechte vorbehalten." },
   language: { label: "Sprache" },

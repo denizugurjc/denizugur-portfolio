@@ -185,6 +185,23 @@ export function GraduationCapIcon(props: IconProps) {
   );
 }
 
+export function HeartIcon(props: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.8}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M12 20.5C12 20.5 3.5 15.5 3.5 9.2A4.7 4.7 0 0 1 12 6.3a4.7 4.7 0 0 1 8.5 2.9C20.5 15.5 12 20.5 12 20.5Z" />
+    </svg>
+  );
+}
+
 export function ExpandIcon(props: IconProps) {
   return (
     <svg
