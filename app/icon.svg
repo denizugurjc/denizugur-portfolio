@@ -1,0 +1,18 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="brand" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8b6dff" />
+      <stop offset="1" stop-color="#34e0f5" />
+    </linearGradient>
+  </defs>
+  <!-- Brand tile: matches the site's bg-gradient-to-br accent (violet -> cyan). -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#brand)" />
+  <!-- Bold "D" monogram (Deniz Ugur), drawn as a vector path with an
+       even-odd counter so it stays crisp at every favicon size. -->
+  <path
+    fill="#ffffff"
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M16 14H28C39 14 48 21.7 48 32C48 42.3 39 50 28 50H16V14ZM25 22V42H28C35 42 40 37.5 40 32C40 26.5 35 22 28 22H25Z"
+  />
+</svg>

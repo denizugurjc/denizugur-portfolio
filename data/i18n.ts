@@ -272,7 +272,7 @@ const de: Dictionary = {
     highlights: [
       { value: "4+", label: "Jahre Web-Entwicklung" },
       { value: "Zürich", label: "Standort" },
-      { value: "∞", label: "Tassen Kaffee" },
+      { value: "∞", label: "Kaffee" },
     ],
   },
   skills: {
