@@ -19,6 +19,8 @@ export interface Dictionary {
     eyebrow: string;
     title: string;
     paragraphs: string[];
+    /** Link label for the apprenticeship curriculum (Modulbaukasten). */
+    credential: string;
     highlights: { value: string; label: string }[];
   };
   skills: { eyebrow: string; title: string; description: string };
@@ -102,6 +104,7 @@ const en: Dictionary = {
       "I care about performance, accessibility, and good developer experience. Clean code and maintainable systems matter to me just as much as shipping features.",
       "Outside of coding, I’m very active in sports. I train almost every day and am currently preparing for a half marathon. It helps me stay consistent and clear-headed, which I also bring into my work as a developer."
     ],
+    credential: "Explore my apprenticeship curriculum",
     highlights: [
       { value: "4+", label: "Years building for the web" },
       { value: "Zurich", label: "Location" },
@@ -127,7 +130,7 @@ const en: Dictionary = {
       "nat-quiz":
         "A playful, interactive quiz game built with React — packed with snappy animations and celebratory special effects that make answering questions genuinely fun.",
       "more-soon":
-        "More projects are on the way. I'm putting the finishing touches on a few so they show my work at its best — check back soon!",
+        "More projects are on the way. I'm putting the finishing touches on a few so they show my work at its best, check back soon!",
     },
     overviews: {
       "user-awareness-page":
@@ -137,7 +140,7 @@ const en: Dictionary = {
       "nat-quiz":
         "Nät Quiz is a fun side project I built in 2023 to sharpen my React skills and experiment with motion and interactivity. Players work through a series of questions in a clean, responsive interface, while playful animations and celebratory special effects — think confetti and lively transitions — reward correct answers and keep the experience engaging from start to finish. The quiz is deployed and playable live in the browser.",
       "more-soon":
-        "More projects are on the way. I'm putting the finishing touches on a few so they show my work at its best — check back soon!",
+        "More projects are on the way. I'm putting the finishing touches on a few so they show my work at its best, check back soon!",
     },
     features: {
       "user-awareness-page": [
@@ -237,6 +240,7 @@ const de: Dictionary = {
       "Ich lege grossen Wert auf Performance, Accessibility und eine gute Developer Experience. Sauberer Code und wartbare Systeme sind mir genauso wichtig wie das schnelle Ausliefern von Features.",
       "Ausserhalb des Codings bin ich sehr sportlich aktiv. Ich trainiere fast jeden Tag und bereite mich aktuell auf einen Halbmarathon vor. Das hilft mir, konsequent und fokussiert zu bleiben, was ich auch in meine Arbeit als Entwickler einbringe.",
     ],
+    credential: "Lehrplan meiner Ausbildung entdecken",
     highlights: [
       { value: "4+", label: "Jahre Web-Entwicklung" },
       { value: "Zürich", label: "Standort" },
@@ -262,7 +266,7 @@ const de: Dictionary = {
       "nat-quiz":
         "Ein verspieltes, interaktives Quiz-Game, gebaut mit React — voller flotter Animationen und feierlicher Spezialeffekte, die das Beantworten von Fragen richtig Spass machen.",
       "more-soon":
-        "Weitere Projekte sind unterwegs. Ich gebe gerade einigen den letzten Schliff, damit sie meine Arbeit bestmöglich zeigen — schau bald wieder vorbei!",
+        "Weitere Projekte sind unterwegs. Ich gebe gerade einigen den letzten Schliff, damit sie meine Arbeit bestmöglich zeigen, schau bald wieder vorbei!",
     },
     overviews: {
       "user-awareness-page":
@@ -272,7 +276,7 @@ const de: Dictionary = {
       "nat-quiz":
         "Nät Quiz ist ein Fun-Side-Project, das ich 2023 gebaut habe, um meine React-Skills zu schärfen und mit Animationen und Interaktivität zu experimentieren. Spielende beantworten eine Reihe von Fragen in einer aufgeräumten, responsiven Oberfläche, während verspielte Animationen und feierliche Spezialeffekte — etwa Konfetti und lebendige Übergänge — richtige Antworten belohnen und das Erlebnis von Anfang bis Ende unterhaltsam halten. Das Quiz ist live im Browser spielbar.",
       "more-soon":
-        "Weitere Projekte sind unterwegs. Ich gebe gerade einigen den letzten Schliff, damit sie meine Arbeit bestmöglich zeigen — schau bald wieder vorbei!",
+        "Weitere Projekte sind unterwegs. Ich gebe gerade einigen den letzten Schliff, damit sie meine Arbeit bestmöglich zeigen, schau bald wieder vorbei!",
     },
     features: {
       "user-awareness-page": [

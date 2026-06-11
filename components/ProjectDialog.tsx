@@ -52,8 +52,11 @@ export function ProjectDialog({
   const slideCount = shots ? shots.length : 3;
   const overview = t.overviews[project.id] ?? t.descriptions[project.id] ?? "";
   const features = t.features[project.id] ?? [];
-  const hasGithub = project.github && project.github !== "#";
-  const hasDemo = project.demo && project.demo !== "#";
+  const hasGithub = Boolean(project.github && project.github !== "#");
+  const hasDemo = Boolean(project.demo && project.demo !== "#");
+  // "#" is the sentinel for "demo exists but isn't live yet" → coming soon.
+  const demoComingSoon = project.demo === "#";
+  const showLinks = hasGithub || hasDemo || demoComingSoon;
   const initials = project.title
     .split(" ")
     .map((w) => w[0])
@@ -299,40 +302,43 @@ export function ProjectDialog({
               </ul>
             </section>
 
-            {/* Links */}
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              {hasGithub && (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-full border border-border-soft bg-background/50 px-5 text-sm font-medium text-foreground transition-all hover:-translate-y-0.5 hover:border-accent/50"
-                >
-                  <GitHubIcon className="h-4 w-4" />
-                  {d.viewCode}
-                </a>
-              )}
-              {hasDemo ? (
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-full bg-accent px-5 text-sm font-medium text-white shadow-[0_8px_30px_-8px_var(--accent)] transition-all hover:-translate-y-0.5 hover:shadow-[0_14px_40px_-8px_var(--accent)]"
-                >
-                  <ExternalLinkIcon className="h-4 w-4" />
-                  {d.viewDemo}
-                </a>
-              ) : (
-                <span
-                  aria-disabled="true"
-                  title={d.demoComingSoon}
-                  className="inline-flex h-11 flex-1 cursor-not-allowed items-center justify-center gap-2 rounded-full border border-dashed border-border-soft bg-background/40 px-5 text-sm font-medium text-muted"
-                >
-                  <ExternalLinkIcon className="h-4 w-4" />
-                  {d.demoComingSoon}
-                </span>
-              )}
-            </div>
+            {/* Links — hidden entirely when there's no repo, demo, or
+                "coming soon" placeholder to show. */}
+            {showLinks && (
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                {hasGithub && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-full border border-border-soft bg-background/50 px-5 text-sm font-medium text-foreground transition-all hover:-translate-y-0.5 hover:border-accent/50"
+                  >
+                    <GitHubIcon className="h-4 w-4" />
+                    {d.viewCode}
+                  </a>
+                )}
+                {hasDemo ? (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-full bg-accent px-5 text-sm font-medium text-white shadow-[0_8px_30px_-8px_var(--accent)] transition-all hover:-translate-y-0.5 hover:shadow-[0_14px_40px_-8px_var(--accent)]"
+                  >
+                    <ExternalLinkIcon className="h-4 w-4" />
+                    {d.viewDemo}
+                  </a>
+                ) : demoComingSoon ? (
+                  <span
+                    aria-disabled="true"
+                    title={d.demoComingSoon}
+                    className="inline-flex h-11 flex-1 cursor-not-allowed items-center justify-center gap-2 rounded-full border border-dashed border-border-soft bg-background/40 px-5 text-sm font-medium text-muted"
+                  >
+                    <ExternalLinkIcon className="h-4 w-4" />
+                    {d.demoComingSoon}
+                  </span>
+                ) : null}
+              </div>
+            )}
           </div>
         </div>
           </div>

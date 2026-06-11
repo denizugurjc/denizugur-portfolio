@@ -4,6 +4,7 @@ import { site } from "@/data/portfolio";
 import { Reveal } from "./ui/Reveal";
 import { SectionWrapper } from "./ui/SectionWrapper";
 import { useDictionary } from "./language";
+import { ExternalLinkIcon, GraduationCapIcon } from "./ui/Icons";
 import Image from "next/image";
 
 export function About() {
@@ -21,7 +22,7 @@ export function About() {
                   .join("")} width={400} height={300} />
               </span>
             </div>
-            <div className="absolute bottom-4 left-4 rounded-full border border-border-soft bg-background/80 px-3 py-1 text-xs font-medium text-muted backdrop-blur">
+            <div className="absolute bottom-4 left-4 max-w-[calc(100%-2rem)] truncate whitespace-nowrap rounded-full border border-border-soft bg-background/80 px-3 py-1 text-xs font-medium text-muted backdrop-blur">
               {site.location}
             </div>
           </div>
@@ -36,8 +37,23 @@ export function About() {
             </Reveal>
           ))}
 
+          <Reveal delay={dict.about.paragraphs.length * 80}>
+            <a
+              href={site.apprenticeshipUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/cred mt-2 inline-flex items-center gap-2.5 rounded-full border border-border-soft bg-card/60 py-1.5 pl-2 pr-4 text-sm font-medium text-foreground backdrop-blur transition-all hover:-translate-y-0.5 hover:border-accent/50 hover:text-accent"
+            >
+              <span className="grid h-7 w-7 place-items-center rounded-full bg-gradient-to-br from-accent to-accent-2 text-white">
+                <GraduationCapIcon className="h-4 w-4" />
+              </span>
+              {dict.about.credential}
+              <ExternalLinkIcon className="h-3.5 w-3.5 text-muted transition-colors group-hover/cred:text-accent" />
+            </a>
+          </Reveal>
+
           <Reveal delay={160}>
-            <dl className="mt-8 grid grid-cols-3 gap-4">
+            <dl className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
               {dict.about.highlights.map((item) => (
                 <div
                   key={item.label}

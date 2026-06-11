@@ -20,8 +20,22 @@ export type Project = {
   id: string;
   title: string;
   tags: string[];
-  github: string;
-  demo: string;
+  /**
+   * Optional link to the source code. Omit to hide the code button entirely.
+   */
+  github?: string;
+  /**
+   * Optional link to a live demo.
+   * - A real URL renders the "Live Demo" button.
+   * - "#" renders a non-clickable "coming soon" placeholder.
+   * - Omitting it hides the demo button entirely.
+   */
+  demo?: string;
+  /**
+   * Whether the card opens a detail dialog (gallery, overview, features).
+   * Defaults to `true`; set to `false` for a static teaser card.
+   */
+  details?: boolean;
   /** Optional accent gradient used as a fallback when no image is set. */
   accent?: string;
   /** Optional year/timeframe shown in the detail dialog. */
@@ -58,6 +72,12 @@ export const site = {
   email: "denizugur.dev@gmail.com",
   location: "Remote · Worldwide",
   resumeUrl: "#",
+  /**
+   * Official Swiss “Modulbaukasten” curriculum for the Informatiker EFZ
+   * Applikationsentwicklung apprenticeship — the full list of modules covered.
+   */
+  apprenticeshipUrl:
+    "https://www.modulbaukasten.ch/?d=13d8d40b-6d82-eb11-a812-0022486f6f83",
 };
 
 export const navItems: NavItem[] = [
@@ -111,8 +131,6 @@ export const projects: Project[] = [
     id: "parkingapp",
     title: "Parking lot app (2023 - 2026)",
     tags: ["Next.js", "Tailwind CSS", "Ansible", "Serverless", "Jenkins (CI/CD)", "AWS"],
-    github: "#",
-    demo: "#",
     accent: "from-sky-500/30 to-cyan-500/10",
     cover: "/projects/parkingapp/parkingapp-cover.png",
     screenshots: ["/projects/parkingapp/parkingapp-1.png",
@@ -141,9 +159,8 @@ export const projects: Project[] = [
   {
     id: "more-soon",
     title: "More projects coming soon",
-    tags: [""],
-    github: "#",
-    demo: "#",
+    tags: [],
+    details: false,
     accent: "from-emerald-500/30 to-teal-500/10",
   },
 ];
