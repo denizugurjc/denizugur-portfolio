@@ -385,7 +385,7 @@ const de: Dictionary = {
     eyebrow: "Hat's gefallen?",
     title: "Hat dir meine Website gefallen?",
     description:
-      "Wenn dir dieses Portfolio ein Lächeln entlockt hat, klick aufs Herz — das freut mich riesig.",
+      "Wenn dir dieses Portfolio ein Lächeln entlockt hat, klick aufs Herz. Das freut mich riesig :)",
     likeAction: "Diese Website liken",
     unlikeAction: "Like entfernen",
     thanks: "Danke für die Liebe!",
