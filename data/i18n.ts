@@ -26,11 +26,34 @@ export interface Dictionary {
     eyebrow: string;
     title: string;
     description: string;
-    /** Project descriptions keyed by the project `id` in portfolio.ts. */
+    /** Short project descriptions keyed by the project `id` in portfolio.ts. */
     descriptions: Record<string, string>;
+    /** Long-form explanation shown in the detail dialog, keyed by project id. */
+    overviews: Record<string, string>;
+    /** Key-feature bullet points shown in the detail dialog, keyed by project id. */
+    features: Record<string, string[]>;
     code: string;
     liveDemo: string;
     construction: { badge: string; title: string; description: string };
+    details: {
+      overview: string;
+      keyFeatures: string;
+      techStack: string;
+      screenshots: string;
+      placeholderNote: string;
+      viewCode: string;
+      viewDemo: string;
+      /** Shown when a project has no live demo URL yet. */
+      demoComingSoon: string;
+      close: string;
+      viewDetails: string;
+      /** Prefix for the card's aria-label, e.g. `${openAria} Orbit Commerce`. */
+      openAria: string;
+      /** Lightbox: open full-size image. */
+      enlarge: string;
+      /** Lightbox: close the enlarged image. */
+      closeImage: string;
+    };
   };
   contact: {
     eyebrow: string;
@@ -94,26 +117,69 @@ const en: Dictionary = {
     description:
       "A handful of projects that show how I think about product, performance, and polish.",
     descriptions: {
-      nimbus:
-        "A real-time analytics dashboard that visualizes millions of events with sub-second latency and a fully responsive UI.",
-      orbit:
-        "Headless e-commerce storefront with blazing-fast page loads, dynamic checkout, and a custom CMS integration.",
-      lumen:
-        "An open-source component library of accessible, themeable React primitives used by thousands of developers.",
-      pulse:
-        "End-to-end encrypted team messaging app with presence, threads, and offline-first sync across devices.",
-      atlas:
-        "Interactive geospatial explorer rendering custom map layers and routing on top of a vector tile pipeline.",
-      forge:
-        "A developer productivity CLI that scaffolds full-stack apps with sensible defaults and zero configuration.",
+      "user-awareness-page":
+        "A phishing-awareness web app built as my IPA — it runs a realistic, safe simulation and teaches users how to spot and avoid such attacks.",
+      parkingapp:
+        "An internal parking-management app I built solo during my apprenticeship to fairly share the company's limited parking spaces. It's still used daily by employees who commute by car.",
+      "nat-quiz":
+        "A playful, interactive quiz game built with React — packed with snappy animations and celebratory special effects that make answering questions genuinely fun.",
+      "more-soon":
+        "More projects are on the way. I'm putting the finishing touches on a few so they show my work at its best — check back soon!",
+    },
+    overviews: {
+      "user-awareness-page":
+        "Developed as my IPA — the final practical exam of my apprenticeship — this user-awareness platform guides people through a realistic but completely safe phishing simulation. Once they interact with the simulated attack, they reach an educational debrief that explains exactly what happened and how to recognise the warning signs next time. I built the project end to end, from the React + TypeScript frontend to the AWS deployment.",
+      parkingapp:
+        "I designed and built this parking-management tool end to end during my apprenticeship, because the company had no fair way to share its limited parking spaces among commuting employees. Staff can reserve and release spots and see real-time availability, while administrators keep an overview of usage. I owned everything from the Next.js frontend to the serverless backend on AWS, with automated provisioning through Ansible and a Jenkins CI/CD pipeline for deployments. It's still in daily use today.",
+      "nat-quiz":
+        "Nät Quiz is a fun side project I built in 2023 to sharpen my React skills and experiment with motion and interactivity. Players work through a series of questions in a clean, responsive interface, while playful animations and celebratory special effects — think confetti and lively transitions — reward correct answers and keep the experience engaging from start to finish. The quiz is deployed and playable live in the browser.",
+      "more-soon":
+        "More projects are on the way. I'm putting the finishing touches on a few so they show my work at its best — check back soon!",
+    },
+    features: {
+      "user-awareness-page": [
+        "Realistic yet completely safe phishing simulation",
+        "Geo-blocking to ensure only selected countries can access the demo",
+        "Responsive UI built with React, TypeScript & Tailwind CSS",
+        "Developed and hosted end-to-end on AWS",
+      ],
+      parkingapp: [
+        "Real-time overview of available and occupied spaces",
+        "Self-service reservations and releases for employees",
+        "Admin view for managing spaces and usage",
+        "Serverless backend on AWS, provisioned with Ansible",
+        "Automated deployments via a Jenkins CI/CD pipeline",
+        "Responsive UI built with Next.js & Tailwind CSS",
+      ],
+      "nat-quiz": [
+        "Interactive quiz flow with instant feedback",
+        "Playful animations and celebratory special effects 🎉",
+        "Clean, responsive UI built with React",
+        "Deployed and playable live in the browser",
+      ],
     },
     code: "Code",
     liveDemo: "Live Demo",
     construction: {
       badge: "Work in progress",
-      title: "This section is under construction 🚧",
+      title: "This section is still under construction 🚧",
       description:
-        "I'm currently curating and polishing my best work. They are landing here soon, check back shortly!",
+        "I'm curating and polishing my best work so each project shows what I can really do. New work is landing here soon so check back shortly!",
+    },
+    details: {
+      overview: "Overview",
+      keyFeatures: "Key features",
+      techStack: "Tech stack",
+      screenshots: "Screenshots",
+      placeholderNote: "Preview coming soon",
+      viewCode: "View code",
+      viewDemo: "View live demo",
+      demoComingSoon: "Demo coming soon",
+      close: "Close",
+      viewDetails: "View details",
+      openAria: "View details for",
+      enlarge: "Click to view full size",
+      closeImage: "Close image",
     },
   },
   contact: {
@@ -181,18 +247,46 @@ const de: Dictionary = {
     description:
       "Einige Projekte, die zeigen, wie ich über Produkt, Performance und Feinschliff denke.",
     descriptions: {
-      nimbus:
-        "Ein Echtzeit-Analytics-Dashboard, das Millionen von Events mit Latenzen unter einer Sekunde und einer vollständig responsiven Oberfläche visualisiert.",
-      orbit:
-        "Headless-E-Commerce-Storefront mit blitzschnellen Ladezeiten, dynamischem Checkout und individueller CMS-Integration.",
-      lumen:
-        "Eine Open-Source-Komponentenbibliothek aus barrierefreien, thembaren React-Primitiven, die von tausenden Entwicklern genutzt wird.",
-      pulse:
-        "Ende-zu-Ende-verschlüsselte Team-Messaging-App mit Präsenz, Threads und Offline-First-Synchronisierung über alle Geräte.",
-      atlas:
-        "Interaktiver Geodaten-Explorer, der eigene Kartenebenen und Routing auf Basis einer Vector-Tile-Pipeline rendert.",
-      forge:
-        "Ein CLI für mehr Entwicklerproduktivität, das Full-Stack-Apps mit sinnvollen Voreinstellungen und ohne Konfiguration aufsetzt.",
+      "user-awareness-page":
+        "Eine Phishing-Awareness-Web-App, entwickelt als meine IPA — sie führt eine realistische, sichere Simulation durch und zeigt Nutzenden, wie sie solche Angriffe erkennen und vermeiden.",
+      parkingapp:
+        "Eine interne Parkplatz-Verwaltungs-App, die ich während meiner Lehre eigenständig entwickelt habe, um die begrenzten Firmenparkplätze fair zu verteilen. Sie wird bis heute täglich von pendelnden Mitarbeitenden genutzt.",
+      "nat-quiz":
+        "Ein verspieltes, interaktives Quiz-Game, gebaut mit React — voller flotter Animationen und feierlicher Spezialeffekte, die das Beantworten von Fragen richtig Spass machen.",
+      "more-soon":
+        "Weitere Projekte sind unterwegs. Ich gebe gerade einigen den letzten Schliff, damit sie meine Arbeit bestmöglich zeigen — schau bald wieder vorbei!",
+    },
+    overviews: {
+      "user-awareness-page":
+        "Entwickelt als meine IPA — die praktische Abschlussprüfung meiner Lehre — führt diese Awareness-Plattform Nutzende durch eine realistische, aber vollkommen sichere Phishing-Simulation. Nach der Interaktion mit dem simulierten Angriff gelangen sie zu einer Lernseite, die genau erklärt, was passiert ist und wie man die Warnsignale künftig erkennt. Ich habe das Projekt von A bis Z umgesetzt — vom React-+-TypeScript-Frontend bis zum Deployment auf AWS.",
+      parkingapp:
+        "Diese Parkplatz-Verwaltung habe ich während meiner Lehre von A bis Z entworfen und umgesetzt, da das Unternehmen keine faire Möglichkeit hatte, seine begrenzten Parkplätze unter den pendelnden Mitarbeitenden aufzuteilen. Mitarbeitende können Plätze reservieren und wieder freigeben und sehen die Verfügbarkeit in Echtzeit, während Administratoren den Überblick über die Nutzung behalten. Ich war für alles verantwortlich — vom Next.js-Frontend bis zum Serverless-Backend auf AWS, mit automatisiertem Provisioning via Ansible und einer Jenkins-CI/CD-Pipeline für die Deployments. Sie ist bis heute täglich im Einsatz.",
+      "nat-quiz":
+        "Nät Quiz ist ein Fun-Side-Project, das ich 2023 gebaut habe, um meine React-Skills zu schärfen und mit Animationen und Interaktivität zu experimentieren. Spielende beantworten eine Reihe von Fragen in einer aufgeräumten, responsiven Oberfläche, während verspielte Animationen und feierliche Spezialeffekte — etwa Konfetti und lebendige Übergänge — richtige Antworten belohnen und das Erlebnis von Anfang bis Ende unterhaltsam halten. Das Quiz ist live im Browser spielbar.",
+      "more-soon":
+        "Weitere Projekte sind unterwegs. Ich gebe gerade einigen den letzten Schliff, damit sie meine Arbeit bestmöglich zeigen — schau bald wieder vorbei!",
+    },
+    features: {
+      "user-awareness-page": [
+        "Realistische, aber völlig sichere Phishing-Simulation",
+        "Lern-Debrief, der die Warnsignale erklärt",
+        "Responsive UI mit React, TypeScript & Tailwind CSS",
+        "End-to-end auf AWS entwickelt und gehostet",
+      ],
+      parkingapp: [
+        "Echtzeit-Übersicht über freie und belegte Parkplätze",
+        "Self-Service-Reservierung und -Freigabe für Mitarbeitende",
+        "Admin-Ansicht zur Verwaltung von Plätzen und Nutzung",
+        "Serverless-Backend auf AWS, provisioniert mit Ansible",
+        "Automatisierte Deployments über eine Jenkins-CI/CD-Pipeline",
+        "Responsive UI mit Next.js & Tailwind CSS",
+      ],
+      "nat-quiz": [
+        "Interaktiver Quiz-Ablauf mit sofortigem Feedback",
+        "Verspielte Animationen und feierliche Spezialeffekte 🎉",
+        "Aufgeräumte, responsive UI mit React",
+        "Live im Browser spielbar",
+      ],
     },
     code: "Code",
     liveDemo: "Live-Demo",
@@ -200,7 +294,22 @@ const de: Dictionary = {
       badge: "In Arbeit",
       title: "Dieser Bereich ist noch im Aufbau 🚧",
       description:
-        "Ich wähle und poliere gerade meine besten Arbeiten. Sie erscheinen hier in Kürze, schau bald wieder vorbei!",
+        "Ich wähle und poliere gerade meine besten Arbeiten, damit jedes Projekt zeigt, was ich wirklich kann. Neue Arbeiten erscheinen hier in Kürze — schau bald wieder vorbei!",
+    },
+    details: {
+      overview: "Überblick",
+      keyFeatures: "Wichtigste Funktionen",
+      techStack: "Tech-Stack",
+      screenshots: "Screenshots",
+      placeholderNote: "Vorschau folgt in Kürze",
+      viewCode: "Code ansehen",
+      viewDemo: "Live-Demo ansehen",
+      demoComingSoon: "Demo folgt in Kürze",
+      close: "Schliessen",
+      viewDetails: "Details ansehen",
+      openAria: "Details ansehen für",
+      enlarge: "Zum Vergrössern klicken",
+      closeImage: "Bild schliessen",
     },
   },
   contact: {

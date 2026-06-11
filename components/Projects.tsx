@@ -1,15 +1,18 @@
 "use client";
 
-import { projects } from "@/data/portfolio";
+import { useState } from "react";
+import { projects, type Project } from "@/data/portfolio";
 import { Card } from "./ui/Card";
 import { Reveal } from "./ui/Reveal";
 import { SectionWrapper } from "./ui/SectionWrapper";
 import { useDictionary } from "./language";
+import { ProjectDialog } from "./ProjectDialog";
 import { WrenchIcon } from "./ui/Icons";
 
 export function Projects() {
   const dict = useDictionary();
   const wip = dict.projects.construction;
+  const [selected, setSelected] = useState<Project | null>(null);
 
   return (
     <SectionWrapper
@@ -42,21 +45,27 @@ export function Projects() {
         </div>
       </Reveal>
 
-      {/* Dimmed teaser of upcoming projects (non-interactive while in progress) */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none grid select-none gap-6 opacity-45 blur-[2px] sm:grid-cols-2 lg:grid-cols-3"
-      >
-        {projects.map((project) => (
-          <Card
-            key={project.id}
-            project={project}
-            description={dict.projects.descriptions[project.id]}
-            codeLabel={dict.projects.code}
-            demoLabel={dict.projects.liveDemo}
-          />
+      {/* Project grid — click a card to open its details */}
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {projects.map((project, i) => (
+          <Reveal key={project.id} delay={(i % 3) * 100} className="h-full">
+            <Card
+              project={project}
+              description={dict.projects.descriptions[project.id]}
+              codeLabel={dict.projects.code}
+              demoLabel={dict.projects.liveDemo}
+              comingSoonLabel={dict.projects.details.demoComingSoon}
+              detailsLabel={dict.projects.details.viewDetails}
+              openAria={dict.projects.details.openAria}
+              onOpen={() => setSelected(project)}
+            />
+          </Reveal>
         ))}
       </div>
+
+      {selected && (
+        <ProjectDialog project={selected} onClose={() => setSelected(null)} />
+      )}
     </SectionWrapper>
   );
 }
