@@ -97,6 +97,20 @@ export interface Dictionary {
     /** Placeholder shown while the count loads. */
     loading: string;
   };
+  life: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    /** Photo captions keyed by the gallery photo `id` in portfolio.ts. */
+    captions: Record<string, string>;
+    /** Accessible label to open a photo full-size. */
+    enlarge: string;
+    /** Accessible label to close the lightbox. */
+    close: string;
+    /** Accessible labels for lightbox navigation. */
+    prev: string;
+    next: string;
+  };
   footer: { rights: string };
   language: { label: string };
 }
@@ -245,6 +259,24 @@ const en: Dictionary = {
     countMany: "{count} likes",
     loading: "Loading…",
   },
+  life: {
+    eyebrow: "Beyond the code",
+    title: "Off the clock",
+    description:
+      "A look at life outside the editor — training, travel, and the little things that keep me balanced.",
+    captions: {
+      running: "Early-morning long run before work",
+      "race-day": "Race day — chasing a new personal best",
+      travel: "Exploring somewhere new",
+      gym: "Strength session to balance the miles",
+      coffee: "Where the best ideas happen ☕",
+      outdoors: "Fresh air and a good trail",
+    },
+    enlarge: "Open photo",
+    close: "Close photo",
+    prev: "Previous photo",
+    next: "Next photo",
+  },
   footer: { rights: "All rights reserved." },
   language: { label: "Language" },
 };
@@ -392,6 +424,24 @@ const de: Dictionary = {
     countOne: "{count} Like",
     countMany: "{count} Likes",
     loading: "Lädt…",
+  },
+  life: {
+    eyebrow: "Abseits vom Code",
+    title: "Wenn ich nicht code",
+    description:
+      "Ein Blick auf mein Leben ausserhalb des Editors — Training, Reisen und die kleinen Dinge, die mich im Gleichgewicht halten.",
+    captions: {
+      running: "Frühe Long Runs vor der Arbeit",
+      "race-day": "Wettkampftag — auf der Jagd nach einer neuen Bestzeit",
+      travel: "Etwas Neues entdecken",
+      gym: "Krafttraining als Ausgleich zu den Kilometern",
+      coffee: "Wo die besten Ideen entstehen ☕",
+      outdoors: "Frische Luft und ein guter Trail",
+    },
+    enlarge: "Foto öffnen",
+    close: "Foto schliessen",
+    prev: "Vorheriges Foto",
+    next: "Nächstes Foto",
   },
   footer: { rights: "Alle Rechte vorbehalten." },
   language: { label: "Sprache" },
