@@ -94,7 +94,7 @@ export const site = {
    * it (e.g. "/hero-bg.jpg"). A theme-aware scrim keeps the text readable, so
    * any landscape works. Leave it as-is for the styled gradient/grid look.
    */
-  heroBackground: "/hero-bg.png",
+  heroBackground: "/hero-bg.jpg",
   /**
    * Official Swiss “Modulbaukasten” curriculum for the Informatiker EFZ
    * Applikationsentwicklung apprenticeship — the full list of modules covered.
