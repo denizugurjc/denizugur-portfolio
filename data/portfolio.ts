@@ -65,6 +65,17 @@ export type SocialLink = {
   icon: "github" | "linkedin" | "mail" | "twitter";
 };
 
+export type GalleryPhoto = {
+  /**
+   * Image path under `/public`, e.g. "/life/running.jpg". Drop your own photos
+   * into `public/life/` and point these at them — any aspect ratio works, the
+   * grid crops to a tidy tile and the lightbox shows the full image.
+   */
+  src: string;
+  /** Stable id used to resolve the translated caption in i18n.ts. */
+  id: string;
+};
+
 export const site = {
   name: "Deniz Ugur",
   role: "Full-Stack Developer",
@@ -72,6 +83,18 @@ export const site = {
   email: "denizugur.dev@gmail.com",
   location: "Remote · Worldwide",
   resumeUrl: "#",
+  /**
+   * Portrait shown in the hero. Reuses the existing profile photo by default —
+   * swap it for a candid shot of you to make the first impression more personal.
+   */
+  portrait: "/profilePic.png",
+  /**
+   * Full-bleed background image behind the hero. Starts as an on-brand scenic
+   * placeholder — drop a photo of a great view into `public/` and point this at
+   * it (e.g. "/hero-bg.jpg"). A theme-aware scrim keeps the text readable, so
+   * any landscape works. Leave it as-is for the styled gradient/grid look.
+   */
+  heroBackground: "/hero-bg.png",
   /**
    * Official Swiss “Modulbaukasten” curriculum for the Informatiker EFZ
    * Applikationsentwicklung apprenticeship — the full list of modules covered.
@@ -93,6 +116,7 @@ export const skills: Skill[] = [
   { name: "SQL", category: "Languages" },
   { name: "React", category: "Frontend" },
   { name: "Next.js", category: "Frontend" },
+  { name: "Angular", category: "Frontend" },
   { name: "Tailwind CSS", category: "Frontend" },
   { name: "Cypress", category: "Frontend" },
   { name: "Jest", category: "Frontend" },
@@ -169,4 +193,18 @@ export const socials: SocialLink[] = [
   { label: "GitHub", href: "https://github.com/denizefeugur", icon: "github" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/deniz-efe-ugur/", icon: "linkedin" },
   { label: "Email", href: "mailto:denizugur.dev@gmail.com", icon: "mail" },
+];
+
+/**
+ * “Off the clock” photo gallery — life outside the editor. These start as
+ * styled placeholders in `public/life/`; replace each file (or repoint `src`)
+ * with a real photo and edit its caption under `life.captions` in i18n.ts.
+ */
+export const gallery: GalleryPhoto[] = [
+  { id: "running", src: "/life/running.svg" },
+  { id: "race-day", src: "/life/race-day.svg" },
+  { id: "travel", src: "/life/travel.svg" },
+  { id: "gym", src: "/life/gym.jpg" },
+  { id: "coffee", src: "/life/coffee.svg" },
+  { id: "outdoors", src: "/life/outdoors.svg" },
 ];
