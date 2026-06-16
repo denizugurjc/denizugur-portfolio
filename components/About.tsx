@@ -17,7 +17,7 @@ export function About() {
             <div className="absolute inset-0 bg-grid opacity-40" />
             <div className="absolute inset-0 grid place-items-center">
               <span className="bg-gradient-to-br from-accent to-accent-2 bg-clip-text text-7xl font-bold text-transparent">
-                <Image src="/profilePic2.jpg" alt={site.name.split(" ")
+                <Image src="/profilePicture2.jpg" alt={site.name.split(" ")
                   .map((w) => w[0])
                   .join("")} width={400} height={300} />
               </span>
