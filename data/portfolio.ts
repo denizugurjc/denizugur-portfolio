@@ -125,6 +125,7 @@ export const skills: Skill[] = [
   { name: "MySQL", category: "Backend" },
   { name: "Sequelize", category: "Backend" },
   { name: "Serverless Computing", category: "Backend" },
+  { name: ".NET (C#)", category: "Backend" },
   { name: "CI/CD", category: "Tools & DevOps" },
   { name: "Docker", category: "Tools & DevOps" },
   { name: "AWS", category: "Tools & DevOps" },
