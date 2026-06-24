@@ -159,6 +159,8 @@ const en: Dictionary = {
         "An internal parking-management app I built solo during my apprenticeship to fairly share the company's limited parking spaces. It's still used daily by employees who commute by car.",
       "nat-quiz":
         "A playful, interactive quiz game built with React — packed with snappy animations and celebratory special effects that make answering questions genuinely fun.",
+      ugurpack:
+        "A React Native mobile app where you tear open Pokémon booster packs — shake or swipe your phone to reveal a creature pulled live from the PokéAPI, then add it to your growing collection.",
       "more-soon":
         "More projects are on the way. I'm putting the finishing touches on a few so they show my work at its best, check back soon!",
     },
@@ -169,6 +171,8 @@ const en: Dictionary = {
         "I designed and built this parking-management tool end to end during my apprenticeship, because the company had no fair way to share its limited parking spaces among commuting employees. Staff can reserve and release spots and see real-time availability, while administrators keep an overview of usage. I owned everything from the Next.js frontend to the serverless backend on AWS, with automated provisioning through Ansible and a Jenkins CI/CD pipeline for deployments. It's still in daily use today.",
       "nat-quiz":
         "Nät Quiz is a fun side project I built in 2023 to sharpen my React skills and experiment with motion and interactivity. Players work through a series of questions in a clean, responsive interface, while playful animations and celebratory special effects — think confetti and lively transitions — reward correct answers and keep the experience engaging from start to finish. The quiz is deployed and playable live in the browser.",
+      ugurpack:
+        "Ugurpack is a playful React Native app for iPhone and Android that turns opening Pokémon booster packs into a tactile, hands-on experience. Each pack is opened with real phone gestures — give it a shake or swipe across the screen — and the reveal is powered by live data from the PokéAPI, so every pull is a genuine creature with its own artwork, types and stats. Caught Pokémon are saved to your personal collection, where you can browse everything you've found and tap into each one for the full details. I built it to dive into mobile development, native device sensors, gesture handling and smooth reveal animations.",
       "more-soon":
         "More projects are on the way. I'm putting the finishing touches on a few so they show my work at its best, check back soon!",
     },
@@ -192,6 +196,14 @@ const en: Dictionary = {
         "Playful animations and celebratory special effects 🎉",
         "Clean, responsive UI built with React",
         "Deployed and playable live in the browser",
+      ],
+      ugurpack: [
+        "Open packs with real gestures — shake or swipe your phone",
+        "Live Pokémon data pulled from the PokéAPI",
+        "Personal collection that stores every creature you catch",
+        "Detail view with artwork, types and stats for each catch",
+        "Satisfying pack-opening and reveal animations",
+        "Cross-platform mobile app built with React Native",
       ],
     },
     code: "Code",
@@ -325,6 +337,8 @@ const de: Dictionary = {
         "Eine interne Parkplatz-Verwaltungs-App, die ich während meiner Lehre eigenständig entwickelt habe, um die begrenzten Firmenparkplätze fair zu verteilen. Sie wird bis heute täglich von pendelnden Mitarbeitenden genutzt.",
       "nat-quiz":
         "Ein verspieltes, interaktives Quiz-Game, gebaut mit React — voller flotter Animationen und feierlicher Spezialeffekte, die das Beantworten von Fragen richtig Spass machen.",
+      ugurpack:
+        "Eine React-Native-Mobile-App, in der du Pokémon-Booster-Packs aufreisst — schüttle dein Handy oder wische über den Bildschirm, um ein Pokémon zu enthüllen, das live aus der PokéAPI kommt, und füge es deiner wachsenden Sammlung hinzu.",
       "more-soon":
         "Weitere Projekte sind unterwegs. Ich gebe gerade einigen den letzten Schliff, damit sie meine Arbeit bestmöglich zeigen, schau bald wieder vorbei!",
     },
@@ -335,6 +349,8 @@ const de: Dictionary = {
         "Diese Parkplatz-Verwaltung habe ich während meiner Lehre von A bis Z entworfen und umgesetzt, da das Unternehmen keine faire Möglichkeit hatte, seine begrenzten Parkplätze unter den pendelnden Mitarbeitenden aufzuteilen. Mitarbeitende können Plätze reservieren und wieder freigeben und sehen die Verfügbarkeit in Echtzeit, während Administratoren den Überblick über die Nutzung behalten. Ich war für alles verantwortlich — vom Next.js-Frontend bis zum Serverless-Backend auf AWS, mit automatisiertem Provisioning via Ansible und einer Jenkins-CI/CD-Pipeline für die Deployments. Sie ist bis heute täglich im Einsatz.",
       "nat-quiz":
         "Nät Quiz ist ein Fun-Side-Project, das ich 2023 gebaut habe, um meine React-Skills zu schärfen und mit Animationen und Interaktivität zu experimentieren. Spielende beantworten eine Reihe von Fragen in einer aufgeräumten, responsiven Oberfläche, während verspielte Animationen und feierliche Spezialeffekte — etwa Konfetti und lebendige Übergänge — richtige Antworten belohnen und das Erlebnis von Anfang bis Ende unterhaltsam halten. Das Quiz ist live im Browser spielbar.",
+      ugurpack:
+        "Ugurpack ist eine verspielte React-Native-App für iPhone und Android, die das Öffnen von Pokémon-Booster-Packs in ein haptisches, greifbares Erlebnis verwandelt. Jedes Pack wird mit echten Handy-Gesten geöffnet — einmal schütteln oder über den Bildschirm wischen — und die Enthüllung wird von Live-Daten aus der PokéAPI gespeist, sodass jeder Zug ein echtes Wesen mit eigenem Artwork, Typen und Werten ist. Gefangene Pokémon landen in deiner persönlichen Sammlung, in der du alles Gefundene durchstöbern und für die vollen Details antippen kannst. Ich habe sie gebaut, um in die Mobile-Entwicklung, native Gerätesensoren, Gesten-Handling und flüssige Enthüllungs-Animationen einzutauchen.",
       "more-soon":
         "Weitere Projekte sind unterwegs. Ich gebe gerade einigen den letzten Schliff, damit sie meine Arbeit bestmöglich zeigen, schau bald wieder vorbei!",
     },
@@ -358,6 +374,14 @@ const de: Dictionary = {
         "Verspielte Animationen und feierliche Spezialeffekte 🎉",
         "Aufgeräumte, responsive UI mit React",
         "Live im Browser spielbar",
+      ],
+      ugurpack: [
+        "Packs mit echten Gesten öffnen — Handy schütteln oder wischen",
+        "Live-Pokémon-Daten aus der PokéAPI",
+        "Persönliche Sammlung, die jedes gefangene Wesen speichert",
+        "Detailansicht mit Artwork, Typen und Werten pro Fang",
+        "Befriedigende Pack-Öffnungs- und Enthüllungs-Animationen",
+        "Plattformübergreifende Mobile-App mit React Native",
       ],
     },
     code: "Code",

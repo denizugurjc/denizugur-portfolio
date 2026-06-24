@@ -167,6 +167,21 @@ export const projects: Project[] = [
       "/projects/parkingapp/parkingapp-7.png"
     ],
   },
+    {
+    id: "ugurpack",
+    title: "Ugurpack (2025)",
+    tags: ["React Native", "TypeScript", "PokéAPI", "Mobile", "Gestures"],
+    github: "https://github.com/DenizEfeUgur/ugurpack",
+    demo: "https://ugurpack.deniz-ugur.dev/",
+    accent: "from-amber-500/30 to-rose-500/10",
+    cover: "/projects/ugurpack/ugurpack-cover.png",
+    screenshots: [
+      "/projects/ugurpack/ugurpack-1.png",
+      "/projects/ugurpack/ugurpack-2.png",
+      "/projects/ugurpack/ugurpack-3.png",
+      "/projects/ugurpack/ugurpack-4.png",
+    ],
+  },
   {
     id: "nat-quiz",
     title: "Nät Quiz (2023)",
@@ -181,6 +196,7 @@ export const projects: Project[] = [
       "/projects/nat-quiz/nat-quiz-3.png",
     ],
   },
+
   {
     id: "more-soon",
     title: "More projects coming soon",
