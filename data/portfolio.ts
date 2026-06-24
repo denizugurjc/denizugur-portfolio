@@ -174,7 +174,7 @@ export const projects: Project[] = [
     github: "https://github.com/DenizEfeUgur/ugurpack",
     demo: "https://ugurpack.deniz-ugur.dev/",
     accent: "from-amber-500/30 to-rose-500/10",
-    cover: "/projects/ugurpack/ugurpack-cover.png",
+    cover: "/projects/ugurpack/ugurpack-coverr.png",
     screenshots: [
       "/projects/ugurpack/ugurpack-1.png",
       "/projects/ugurpack/ugurpack-2.png",
