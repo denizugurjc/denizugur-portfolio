@@ -15,13 +15,13 @@ export function About() {
         <Reveal className="mx-auto w-full max-w-sm">
           <div className="relative aspect-square overflow-hidden rounded-3xl border border-border-soft bg-gradient-to-br from-accent/20 to-accent-2/10">
             <div className="absolute inset-0 bg-grid opacity-40" />
-            <div className="absolute inset-0 grid place-items-center">
-              <span className="bg-gradient-to-br from-accent to-accent-2 bg-clip-text text-7xl font-bold text-transparent">
-                <Image src="/profilePicture2.jpg" alt={site.name.split(" ")
-                  .map((w) => w[0])
-                  .join("")} width={400} height={300} />
-              </span>
-            </div>
+            <Image
+              src="/profilePicture22.jpg"
+              alt={site.name}
+              fill
+              sizes="(max-width: 1024px) 100vw, 24rem"
+              className="object-cover"
+            />
             <div className="absolute bottom-4 left-4 max-w-[calc(100%-2rem)] truncate whitespace-nowrap rounded-full border border-border-soft bg-background/80 px-3 py-1 text-xs font-medium text-muted backdrop-blur">
               {site.location}
             </div>
