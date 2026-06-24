@@ -115,6 +115,7 @@ export const skills: Skill[] = [
   { name: "JavaScript", category: "Languages" },
   { name: "SQL", category: "Languages" },
   { name: "React", category: "Frontend" },
+  { name: "React Native", category: "Frontend" },
   { name: "Next.js", category: "Frontend" },
   { name: "Angular", category: "Frontend" },
   { name: "Tailwind CSS", category: "Frontend" },
@@ -130,11 +131,10 @@ export const skills: Skill[] = [
   { name: "Docker", category: "Tools & DevOps" },
   { name: "AWS", category: "Tools & DevOps" },
   { name: "Git", category: "Tools & DevOps" },
-  { name: "Vercel", category: "Tools & DevOps" },
-  { name: "Scrum", category: "Tools & DevOps" },
+  { name: "Scrum / Agile", category: "Tools & DevOps" },
   { name: "Claude code", category: "AI" },
   { name: "Github copilot", category: "AI" },
-  { name: "Chat GPT", category: "AI" },
+  { name: "Agentic coding", category: "AI" },
   { name: "More +", category: "" },
 ];
 

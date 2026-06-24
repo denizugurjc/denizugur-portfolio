@@ -54,13 +54,12 @@ export function Card({
       {/* Preview header — per-project image, or a styled gradient fallback. */}
       <div
         className={cn(
-          "relative h-36 w-full overflow-hidden bg-gradient-to-br",
+          "relative h-44 w-full overflow-hidden bg-gradient-to-br",
           project.accent ?? "from-accent/30 to-accent-2/10",
         )}
       >
         {cover ? (
           <>
-            {/* Blurred fill keeps any aspect ratio looking intentional. */}
             <Image
               src={cover}
               alt=""
@@ -71,16 +70,13 @@ export function Card({
               className="scale-110 object-cover blur-2xl"
             />
             <div className="absolute inset-0 bg-background/20" />
-            {/* The full screenshot, never cropped. Served unoptimized so the
-                optimizer's lossy AVIF/WebP re-encode can't soften UI text;
-                the browser downscales the original PNG, which stays crisp. */}
             <Image
               src={cover}
               alt={project.title}
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              unoptimized
-              className="object-contain p-2 transition-transform duration-500 group-hover:scale-[1.03]"
+              quality={75}
+              className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
             />
           </>
         ) : (
