@@ -58,6 +58,7 @@ export const skills: Skill[] = [
   { name: "SQL", category: "Languages" },
   { name: "React", category: "Frontend" },
   { name: "React Native", category: "Frontend" },
+  { name: "React Query / TanStack Query", category: "Frontend" },
   { name: "Next.js", category: "Frontend" },
   { name: "Angular", category: "Frontend" },
   { name: "Tailwind CSS", category: "Frontend" },
@@ -94,6 +95,7 @@ export const projects: Project[] = [
       "/projects/run-and-grow/run-and-grow-1.png",
       "/projects/run-and-grow/run-and-grow-2.png",
       "/projects/run-and-grow/run-and-grow-3.png",
+      "/projects/run-and-grow/run-and-grow-4.png",
     ],
   },
   {
