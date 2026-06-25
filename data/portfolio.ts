@@ -1,59 +1,22 @@
-/**
- * Central content file for the portfolio.
- * Edit everything here — copy, links, skills, and projects — to make the site yours.
- */
-
 export type NavItem = {
-  /** Section id, also used to look up the translated label in i18n.ts. */
   id: "about" | "skills" | "projects" | "contact";
   href: string;
 };
 
 export type Skill = {
   name: string;
-  /** Short category used purely for visual grouping/legend. */
   category: "Languages" | "Frontend" | "Backend" | "Tools & DevOps" | "AI" | "";
 };
 
 export type Project = {
-  /** Stable id used to resolve the translated description in i18n.ts. */
   id: string;
   title: string;
   tags: string[];
-  /**
-   * Optional link to the source code. Omit to hide the code button entirely.
-   */
   github?: string;
-  /**
-   * Optional link to a live demo.
-   * - A real URL renders the "Live Demo" button.
-   * - "#" renders a non-clickable "coming soon" placeholder.
-   * - Omitting it hides the demo button entirely.
-   */
   demo?: string;
-  /**
-   * Whether the card opens a detail dialog (gallery, overview, features).
-   * Defaults to `true`; set to `false` for a static teaser card.
-   */
   details?: boolean;
-  /** Optional accent gradient used as a fallback when no image is set. */
   accent?: string;
-  /** Optional year/timeframe shown in the detail dialog. */
   year?: string;
-  /**
-   * Per-project images. Drop files into `public/projects/` and reference them
-   * by their public path (starting at `/`), e.g. "/projects/my-app-1.png".
-   *
-   * Anything under `public/` is committed to the repo and copied into the
-   * production build, so these paths resolve identically in dev and on the
-   * deployed site. PNG, JPG, WebP, AVIF and SVG are all supported.
-   *
-   * - `cover`: thumbnail shown on the project card (and first gallery slide).
-   * - `screenshots`: additional images shown in the detail dialog gallery.
-   *
-   * When both are omitted, the card and dialog fall back to a styled gradient
-   * placeholder, so projects without images still look complete.
-   */
   cover?: string;
   screenshots?: string[];
 };
@@ -61,18 +24,11 @@ export type Project = {
 export type SocialLink = {
   label: string;
   href: string;
-  /** Icon key resolved in the UI. */
   icon: "github" | "linkedin" | "mail" | "twitter";
 };
 
 export type GalleryPhoto = {
-  /**
-   * Image path under `/public`, e.g. "/life/running.jpg". Drop your own photos
-   * into `public/life/` and point these at them — any aspect ratio works, the
-   * grid crops to a tidy tile and the lightbox shows the full image.
-   */
   src: string;
-  /** Stable id used to resolve the translated caption in i18n.ts. */
   id: string;
 };
 
@@ -83,22 +39,8 @@ export const site = {
   email: "denizugur.dev@gmail.com",
   location: "Remote · Worldwide",
   resumeUrl: "#",
-  /**
-   * Portrait shown in the hero. Reuses the existing profile photo by default —
-   * swap it for a candid shot of you to make the first impression more personal.
-   */
   portrait: "/profilePic.png",
-  /**
-   * Full-bleed background image behind the hero. Starts as an on-brand scenic
-   * placeholder — drop a photo of a great view into `public/` and point this at
-   * it (e.g. "/hero-bg.jpg"). A theme-aware scrim keeps the text readable, so
-   * any landscape works. Leave it as-is for the styled gradient/grid look.
-   */
   heroBackground: "/hero-bg.jpg",
-  /**
-   * Official Swiss “Modulbaukasten” curriculum for the Informatiker EFZ
-   * Applikationsentwicklung apprenticeship — the full list of modules covered.
-   */
   apprenticeshipUrl:
     "https://www.modulbaukasten.ch/?d=13d8d40b-6d82-eb11-a812-0022486f6f83",
 };
@@ -139,6 +81,21 @@ export const skills: Skill[] = [
 ];
 
 export const projects: Project[] = [
+    {
+    id: "run-and-grow",
+    title: "Run & Grow (2026)",
+    tags: ["Angular", "TypeScript", "Angular Signals", "Reactive Forms", "SCSS", "localStorage"],
+    github: "https://github.com/DenizEfeUgur/Run-and-Grow",
+    demo: "https://run-and-grow.deniz-ugur.dev/dashboard",
+    year: "2026",
+    accent: "from-green-500/30 to-amber-500/10",
+    cover: "/projects/run-and-grow/run-and-grow-cover.png",
+    screenshots: [
+      "/projects/run-and-grow/run-and-grow-1.png",
+      "/projects/run-and-grow/run-and-grow-2.png",
+      "/projects/run-and-grow/run-and-grow-3.png",
+    ],
+  },
   {
     id: "user-awareness-page",
     title: "User Awareness phishing Page (my IPA) 2026",
@@ -196,7 +153,6 @@ export const projects: Project[] = [
       "/projects/nat-quiz/nat-quiz-3.png",
     ],
   },
-
   {
     id: "more-soon",
     title: "More projects coming soon",
@@ -212,11 +168,6 @@ export const socials: SocialLink[] = [
   { label: "Email", href: "mailto:denizugur.dev@gmail.com", icon: "mail" },
 ];
 
-/**
- * “Off the clock” photo gallery — life outside the editor. These start as
- * styled placeholders in `public/life/`; replace each file (or repoint `src`)
- * with a real photo and edit its caption under `life.captions` in i18n.ts.
- */
 export const gallery: GalleryPhoto[] = [
   { id: "running", src: "/life/running.svg" },
   { id: "race-day", src: "/life/race-day.svg" },

@@ -156,11 +156,13 @@ const en: Dictionary = {
       "user-awareness-page":
         "A phishing-awareness web app built as my IPA — it runs a realistic, safe simulation and teaches users how to spot and avoid such attacks.",
       parkingapp:
-        "An internal parking-management app I built solo during my apprenticeship to fairly share the company's limited parking spaces. It's still used daily by employees who commute by car.",
+        "An internal parking-management app I built solo during my apprenticeship to fairly share the company's limited parking spaces. It's still used daily by hundreds of employees who commute by car.",
       "nat-quiz":
         "A playful, interactive quiz game built with React — packed with snappy animations and celebratory special effects that make answering questions genuinely fun.",
       ugurpack:
         "A React Native mobile app where you tear open Pokémon booster packs — shake or swipe your phone to reveal a creature pulled live from the PokéAPI, then add it to your growing collection.",
+      "run-and-grow":
+        "An Angular training journal I use for my half-marathon prep where every run you log grows a virtual garden. Built with standalone components, Angular Signals and Reactive Forms, it runs fully offline and saves everything to localStorage.",
       "more-soon":
         "More projects are on the way. I'm putting the finishing touches on a few so they show my work at its best, check back soon!",
     },
@@ -173,6 +175,8 @@ const en: Dictionary = {
         "Nät Quiz is a fun side project I built in 2023 to sharpen my React skills and experiment with motion and interactivity. Players work through a series of questions in a clean, responsive interface, while playful animations and celebratory special effects — think confetti and lively transitions — reward correct answers and keep the experience engaging from start to finish. The quiz is deployed and playable live in the browser.",
       ugurpack:
         "Ugurpack is a playful React Native app for iPhone and Android that turns opening Pokémon booster packs into a tactile, hands-on experience. Each pack is opened with real phone gestures — give it a shake or swipe across the screen — and the reveal is powered by live data from the PokéAPI, so every pull is a genuine creature with its own artwork, types and stats. Caught Pokémon are saved to your personal collection, where you can browse everything you've found and tap into each one for the full details. I built it to dive into mobile development, native device sensors, gesture handling and smooth reveal animations.",
+      "run-and-grow":
+        "Run & Grow is a backend-free single-page app that makes half-marathon training feel rewarding: every workout you log grows a calm, natural garden. The dashboard tracks your weekly distance goal, current streak, longest run and a countdown to race day, while a reactive form captures each run's distance, duration, type and how it felt. The garden is derived straight from your runs — easy runs sprout flowers, intervals add shrubs, tempo runs bloom special flowers, long runs grow trees, hitting the weekly goal earns a butterfly and training three days in a week brings a bird. All state lives in Angular Signals with computed() values and persists in localStorage, so the garden updates instantly and survives a refresh — no login, no server, no external APIs. I built it as a polished, mobile-first demo to explore modern standalone Angular with signals.",
       "more-soon":
         "More projects are on the way. I'm putting the finishing touches on a few so they show my work at its best, check back soon!",
     },
@@ -204,6 +208,14 @@ const en: Dictionary = {
         "Detail view with artwork, types and stats for each catch",
         "Satisfying pack-opening and reveal animations",
         "Cross-platform mobile app built with React Native",
+      ],
+      "run-and-grow": [
+        "Weekly km goal with an animated progress bar and live stats",
+        "A garden that grows from your runs — flowers, shrubs, trees, butterflies & birds",
+        "Reactive form with validation for distance, duration, type and feeling",
+        "Computed weekly km, longest run and current streak via Angular Signals",
+        "Run history with pace (min/km), type filters and confirm-to-delete",
+        "Fully offline & instant — state persists in localStorage, no backend",
       ],
     },
     code: "Code",
@@ -339,6 +351,8 @@ const de: Dictionary = {
         "Ein verspieltes, interaktives Quiz-Game, gebaut mit React — voller flotter Animationen und feierlicher Spezialeffekte, die das Beantworten von Fragen richtig Spass machen.",
       ugurpack:
         "Eine React-Native-Mobile-App, in der du Pokémon-Booster-Packs aufreisst — schüttle dein Handy oder wische über den Bildschirm, um ein Pokémon zu enthüllen, das live aus der PokéAPI kommt, und füge es deiner wachsenden Sammlung hinzu.",
+      "run-and-grow":
+        "Ein Angular-Trainingstagebuch für die Halbmarathon-Vorbereitung, bei dem jeder erfasste Lauf einen virtuellen Garten wachsen lässt. Gebaut mit Standalone Components, Angular Signals und Reactive Forms — läuft komplett offline und speichert alles im localStorage.",
       "more-soon":
         "Weitere Projekte sind unterwegs. Ich gebe gerade einigen den letzten Schliff, damit sie meine Arbeit bestmöglich zeigen, schau bald wieder vorbei!",
     },
@@ -351,6 +365,8 @@ const de: Dictionary = {
         "Nät Quiz ist ein Fun-Side-Project, das ich 2023 gebaut habe, um meine React-Skills zu schärfen und mit Animationen und Interaktivität zu experimentieren. Spielende beantworten eine Reihe von Fragen in einer aufgeräumten, responsiven Oberfläche, während verspielte Animationen und feierliche Spezialeffekte — etwa Konfetti und lebendige Übergänge — richtige Antworten belohnen und das Erlebnis von Anfang bis Ende unterhaltsam halten. Das Quiz ist live im Browser spielbar.",
       ugurpack:
         "Ugurpack ist eine verspielte React-Native-App für iPhone und Android, die das Öffnen von Pokémon-Booster-Packs in ein haptisches, greifbares Erlebnis verwandelt. Jedes Pack wird mit echten Handy-Gesten geöffnet — einmal schütteln oder über den Bildschirm wischen — und die Enthüllung wird von Live-Daten aus der PokéAPI gespeist, sodass jeder Zug ein echtes Wesen mit eigenem Artwork, Typen und Werten ist. Gefangene Pokémon landen in deiner persönlichen Sammlung, in der du alles Gefundene durchstöbern und für die vollen Details antippen kannst. Ich habe sie gebaut, um in die Mobile-Entwicklung, native Gerätesensoren, Gesten-Handling und flüssige Enthüllungs-Animationen einzutauchen.",
+      "run-and-grow":
+        "Run & Grow ist eine backendfreie Single-Page-App, die das Halbmarathon-Training belohnend macht: Jede dokumentierte Einheit lässt einen ruhigen, natürlichen Garten wachsen. Das Dashboard verfolgt dein Wochenkilometer-Ziel, die aktuelle Streak, den längsten Lauf und einen Countdown bis zum Renntag, während ein Reactive Form Distanz, Dauer, Trainingstyp und Gefühl jeder Einheit erfasst. Der Garten wird direkt aus den Läufen abgeleitet — lockere Läufe lassen Blumen spriessen, Intervalle bringen Sträucher, Tempoläufe besondere Blüten, Long Runs wachsen zu Bäumen, das erreichte Wochenziel bringt einen Schmetterling und drei Trainingstage pro Woche einen Vogel. Der gesamte State liegt in Angular Signals mit computed()-Werten und wird im localStorage gespeichert, sodass sich der Garten sofort aktualisiert und einen Reload übersteht — ohne Login, ohne Server, ohne externe APIs. Ich habe sie als ausgefeilte, Mobile-first-Demo gebaut, um modernes Standalone-Angular mit Signals auszuloten.",
       "more-soon":
         "Weitere Projekte sind unterwegs. Ich gebe gerade einigen den letzten Schliff, damit sie meine Arbeit bestmöglich zeigen, schau bald wieder vorbei!",
     },
@@ -382,6 +398,14 @@ const de: Dictionary = {
         "Detailansicht mit Artwork, Typen und Werten pro Fang",
         "Befriedigende Pack-Öffnungs- und Enthüllungs-Animationen",
         "Plattformübergreifende Mobile-App mit React Native",
+      ],
+      "run-and-grow": [
+        "Wochenkilometer-Ziel mit animiertem Fortschrittsbalken und Live-Kennzahlen",
+        "Ein Garten, der aus deinen Läufen wächst — Blumen, Sträucher, Bäume, Schmetterlinge & Vögel",
+        "Reactive Form mit Validierung für Distanz, Dauer, Typ und Gefühl",
+        "Berechnete Wochenkilometer, längster Lauf und Streak via Angular Signals",
+        "Lauf-Historie mit Pace (min/km), Typ-Filtern und Löschen mit Bestätigung",
+        "Komplett offline & sofort — State bleibt im localStorage, kein Backend",
       ],
     },
     code: "Code",
