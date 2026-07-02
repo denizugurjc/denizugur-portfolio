@@ -39,7 +39,7 @@ export const site = {
   email: "denizugur.dev@gmail.com",
   location: "Remote · Worldwide",
   resumeUrl: "#",
-  portrait: "/profilePic.png",
+  portrait: "/profilePicture.png",
   heroBackground: "/hero-bg.jpg",
   apprenticeshipUrl:
     "https://www.modulbaukasten.ch/?d=13d8d40b-6d82-eb11-a812-0022486f6f83",
